@@ -2,7 +2,8 @@
   "name": "Back to Backspace",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "",
+  "description": "Use backspace to go back to the previous page you were on.",
+  "homepage_url": "https://github.com/j-delaney/back-to-backspace",
   "minimum_chrome_version": "52.0.2720.0",
   "icons": {
     "16": "icons/icon16.png",
