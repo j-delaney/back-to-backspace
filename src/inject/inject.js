@@ -5,7 +5,8 @@ const tagBlacklist = [
     'select',
     'option',
     'datalist',
-    'keygen'
+    'keygen',
+    '[contenteditable]'
 ];
 
 const matches = /Chrome\/([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)/.exec(navigator.userAgent);
