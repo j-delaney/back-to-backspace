@@ -1,12 +1,13 @@
-// List of tags that, when active, mean the page shouldn't go back.
-const tagBlacklist = {
-    'input': true,
-    'textarea': true,
-    'select': true,
-    'option': true,
-    'datalist': true,
-    'keygen': true
-};
+// List of selectors that, when focused on, mean the page shouldn't go back.
+const tagBlacklist = [
+    'input',
+    'textarea',
+    'select',
+    'option',
+    'datalist',
+    'keygen',
+    '[contenteditable]'
+];
 
 const matches = /Chrome\/([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)/.exec(navigator.userAgent);
 const version = {
@@ -21,16 +22,22 @@ const version = {
 if (version.major > 52 ||
     (version.major === 52 && version.minor > 0) ||
     (version.major === 52 && version.minor === 0 && version.build >= 2720)) {
-    document.onkeydown = function (event) {
+    document.addEventListener("keydown", function (event) {
         // Check if key pressed was backspace.
-        if (event.keyCode === 8) {
-            // Get the HTML tag name of the active element.
-            let activeTag = document.activeElement.tagName.toLowerCase();
-
-            // Check to see if the user has focus on a form element.
-            if (!tagBlacklist.hasOwnProperty(activeTag)) {
+        if (event.key === "Backspace") {
+            // Get the active element.
+            let activeEl = document.activeElement;
+            let activateBack = true;
+            
+            // Check to see if the user has focus on a blacklisted element.
+            tagBlacklist.forEach(function(selector) {
+                if (activeEl.matches(selector))
+                    activateBack = false;
+            });
+            
+            if (activateBack) {
                 history.go(-1);
             }
         }
-    };
+    }, false);
 }
