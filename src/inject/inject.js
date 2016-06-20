@@ -36,7 +36,13 @@ if (version.major > 52 ||
             });
             
             if (activateBack) {
-                history.go(-1);
+                if (event.shiftKey) {
+                    // Go forward in history if the shift key is being held down.
+                    history.go(1);
+                } else {
+                    // Go backwards in history if the shift key is not being held down.
+                    history.go(-1);
+                }
             }
         }
     }, false);
