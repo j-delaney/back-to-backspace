@@ -53,6 +53,6 @@ if (version.major > 52 ||
             }
         }
     }, true); // Sites like Google Search move you to the input field when
-              // backspace is pressed. The `true` couses the script to be
+              // backspace is pressed. The `true` causes the script to be
               // executed before Google does its thing.
 }
