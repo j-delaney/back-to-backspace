@@ -28,14 +28,21 @@ if (version.major > 52 ||
             // Get the active element.
             let activeEl = document.activeElement;
             let activateBack = true;
-            
+
             // Check to see if the user has focus on a blacklisted element.
             tagBlacklist.forEach(function(selector) {
                 if (activeEl.matches(selector))
                     activateBack = false;
             });
-            
+
             if (activateBack) {
+                // If backspace is pressed on a site like Google Search, Google
+                // will move the focus to the input field. Causing you to see
+                // the last character of the input field to be removed before
+                // going back (or forward) a page.
+                // This disables that behavior.
+                event.stopImmediatePropagation();
+
                 if (event.shiftKey) {
                     // Go forward in history if the shift key is being held down.
                     history.go(1);
@@ -45,5 +52,7 @@ if (version.major > 52 ||
                 }
             }
         }
-    }, false);
+    }, true); // Sites like Google Search move you to the input field when
+              // backspace is pressed. The `true` causes the script to be
+              // executed before Google does its thing.
 }

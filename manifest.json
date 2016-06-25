@@ -1,6 +1,6 @@
 {
   "name": "Back to Backspace",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 2,
   "description": "Use backspace to go back to the previous page you were on.",
   "homepage_url": "https://github.com/j-delaney/back-to-backspace",
