@@ -24,7 +24,7 @@ if (version.major > 52 ||
     (version.major === 52 && version.minor === 0 && version.build >= 2720)) {
     document.addEventListener("keydown", function (event) {
         // Check if key pressed was backspace.
-        if (event.keyCode == 8) {
+        if (event.key === "Backspace" || event.keyCode == 8) {
             // Get the active element.
             let activeEl = document.activeElement;
             let activateBack = true;
