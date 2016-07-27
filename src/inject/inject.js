@@ -27,7 +27,7 @@ if (version.major > 52 ||
         if (event.key === "Backspace") {
             // Get the active element.
             // Check to see if the user has focus on a blacklisted element.
-            if ( tagBlackList.indexOf(document.activeElement.nodeName.toLowerCase()) > -1 ) {
+            if ( tagBlacklist.indexOf(document.activeElement.nodeName.toLowerCase()) === -1 ) {
                 // If backspace is pressed on a site like Google Search, Google
                 // will move the focus to the input field. Causing you to see
                 // the last character of the input field to be removed before
