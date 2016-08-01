@@ -24,7 +24,7 @@ if (version.major > 52 ||
     (version.major === 52 && version.minor === 0 && version.build >= 2720)) {
     document.addEventListener("keydown", function (event) {
         // Check if key pressed was backspace.
-        if (event.key === "Backspace") {
+        if (event.key === "Backspace" || event.keyCode == 8) {
             // Get the active element.
             // Check to see if the user has focus on a blacklisted element.
             if ( tagBlacklist.indexOf(document.activeElement.nodeName.toLowerCase()) === -1 ) {
