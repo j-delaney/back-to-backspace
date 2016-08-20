@@ -1,3 +1,5 @@
+# [Install from the chrome app store](https://chrome.google.com/webstore/detail/back-to-backspace/cldokedgmomhbifmiiogjjkgffhcbaec)
+
 Back To Backspace
 =================
 

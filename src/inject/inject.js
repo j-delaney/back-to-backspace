@@ -1,11 +1,11 @@
 // List of selectors that, when focused on, mean the page shouldn't go back.
 const tagBlacklist = [
-    'input',
-    'textarea',
-    'select',
-    'option',
-    'datalist',
-    'keygen'
+    'INPUT',
+    'TEXTAREA',
+    'SELECT',
+    'OPTION',
+    'DATALIST',
+    'KEYGEN'
 ];
 
 document.addEventListener("keydown", function (event) {
