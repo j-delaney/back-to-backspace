@@ -1,11 +1,11 @@
 // List of selectors that, when focused on, mean the page shouldn't go back.
 const tagBlacklist = [
-    'input',
-    'textarea',
-    'select',
-    'option',
-    'datalist',
-    'keygen'
+    'INPUT',
+    'TEXTAREA',
+    'SELECT',
+    'OPTION',
+    'DATALIST',
+    'KEYGEN'
 ];
 
 const matches = /Chrome\/([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)/.exec(navigator.userAgent);
@@ -26,7 +26,7 @@ if (version.major > 52 ||
         if (event.key === "Backspace" || event.keyCode == 8) {
             // Get the active element.
             // Check to see if the user has focus on a blacklisted element.
-            if ( tagBlacklist.indexOf(document.activeElement.nodeName.toLowerCase()) === -1
+            if (!tagBlacklist.includes(document.activeElement.nodeName)
               && document.activeElement.contentEditable !== "true"
               && document.activeElement.contentEditable !== "plaintext-only") {
                 // If backspace is pressed on a site like Google Search, Google
