@@ -7,6 +7,7 @@ Miss being able to use backspace to go back a page? This extension restores that
 the backspace key on any page and you'll go back to the previous page you were looking at. Note that
 this will not happen if you are currently filling out a form or typing into a textarea or input box.
 
+**Update 8-16-2016:** Google has since released an official extension that offers this functionality. [Go Back with Backspace](https://chrome.google.com/webstore/detail/go-back-with-backspace/eekailopagacbcdloonjhbiecobagjci) by Google, available in the Chrome Web Store.
 
 Credit
 ------
